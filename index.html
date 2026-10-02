@@ -633,7 +633,7 @@ section { padding-block: var(--sec); }
 .contato-wrap { max-width: 640px; margin: 0 auto; }
 .contato-wrap h2 { margin-bottom: 1.25rem; }
 .contato-wrap > p { font-size: 1.05rem; color: var(--wg); line-height: 1.85; margin-bottom: 3.5rem; }
-.contato-btns { display: flex; gap: .9rem; justify-content: center; flex-wrap: nowrap; }
+.contato-btns { display: flex; gap: .9rem; justify-content: flex-start; flex-wrap: wrap; }
 @media (max-width: 480px) {
   .contato-btns { flex-direction: column; align-items: center; }
   .c-btn { width: 100%; max-width: 320px; justify-content: center; }
@@ -1890,8 +1890,26 @@ section { padding-block: var(--sec); }
   <div class="pf-wrap">
     <div class="pf-left rv">
       <span class="eyebrow">Fale comigo</span>
-      <h2>Contrate agora</h2>
+      <h2>Entre em contato</h2>
       <p>Preencha o formulário para receber um orçamento personalizado para a sua empresa ou evento.</p>
+      <div class="contato-btns" style="margin-top:2rem">
+        <a href="mailto:contato@robertorabello.com.br" class="c-btn primary">
+          <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="3" width="13" height="9" rx="0"/><path d="M1 3l6.5 5L14 3"/></svg>
+          Enviar e-mail
+        </a>
+        <a href="https://www.linkedin.com/in/robertosrabello/" target="_blank" rel="noopener" class="c-btn">
+          <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="1" width="13" height="13" rx="0"/><path d="M5 6v5M5 4v.5M7 11V8.5c0-1.4.8-2.5 2-2.5s2 1.1 2 2.5V11"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://www.instagram.com/roberto.s.rabello/" target="_blank" rel="noopener" class="c-btn">
+          <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="2" width="11" height="11" rx="2.5"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="11" cy="4" r=".5" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a href="https://lattes.cnpq.br/1386464075867571" target="_blank" rel="noopener" class="c-btn">
+          <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7.5 1v13M1 7.5h13"/><circle cx="7.5" cy="7.5" r="6"/><path d="M4 7.5C4 5 5.5 2.5 7.5 2.5S11 5 11 7.5 9.5 12.5 7.5 12.5 4 10 4 7.5z"/></svg>
+          Lattes
+        </a>
+      </div>
     </div>
     <div class="pf-right rv d2">
       <form id="pf-form" action="https://formsubmit.co/contato@robertorabello.com.br" method="POST">
@@ -1914,6 +1932,7 @@ section { padding-block: var(--sec); }
             <option>Consultoria</option>
           </select>
         </div>
+        <textarea class="pf-input pf-textarea" name="descricao" placeholder="Descrição / Mensagem" rows="4" style="width:100%;resize:vertical;min-height:100px"></textarea>
         <button type="submit" class="pf-submit">Enviar solicitação</button>
       </form>
       <div class="pf-success" id="pf-success">
@@ -1924,35 +1943,6 @@ section { padding-block: var(--sec); }
   </div>
 </section>
 
-
-<!-- ═══ CONTATO ═══ -->
-<section id="contato" class="dark2">
-  <div class="wrap">
-    <div class="contato-wrap">
-      <span class="eyebrow rv">Contato</span>
-      <h2 class="rv d1">Vamos construir algo relevante?</h2>
-      <p class="rv d2">Tecnologia, inovação, educação, palestras ou novos projetos.<br>Estou sempre aberto a boas conversas e novas ideias.</p>
-      <div class="contato-btns rv d3">
-        <a href="mailto:contato@robertorabello.com.br" class="c-btn primary">
-          <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="3" width="13" height="9" rx="0"/><path d="M1 3l6.5 5L14 3"/></svg>
-          Enviar e-mail
-        </a>
-        <a href="https://www.linkedin.com/in/robertosrabello/" target="_blank" rel="noopener" class="c-btn">
-          <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="1" width="13" height="13" rx="0"/><path d="M5 6v5M5 4v.5M7 11V8.5c0-1.4.8-2.5 2-2.5s2 1.1 2 2.5V11"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://www.instagram.com/roberto.s.rabello/" target="_blank" rel="noopener" class="c-btn">
-          <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="2" width="11" height="11" rx="2.5"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="11" cy="4" r=".5" fill="currentColor" stroke="none"/></svg>
-          Instagram
-        </a>
-        <a href="https://lattes.cnpq.br/1386464075867571" target="_blank" rel="noopener" class="c-btn">
-          <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7.5 1v13M1 7.5h13"/><circle cx="7.5" cy="7.5" r="6"/><path d="M4 7.5C4 5 5.5 2.5 7.5 2.5S11 5 11 7.5 9.5 12.5 7.5 12.5 4 10 4 7.5z"/></svg>
-          Lattes
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ FOOTER ═══ -->
 <footer id="footer">
