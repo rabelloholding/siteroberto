@@ -20,7 +20,7 @@
 <meta name="author" content="Roberto Rabello">
 <meta name="robots" content="index, follow"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
 /* === PALESTRA FORM === */
-#palestra-form { background: var(--c); overflow: hidden; padding-block: 0; }
+#palestra-form { background: var(--c2); overflow: hidden; padding-block: 0; }
 .pf-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
 .pf-left {
   padding: clamp(48px,8vw,96px) clamp(32px,6vw,80px);
@@ -36,7 +36,7 @@
 .pf-left p { font-size: .95rem; color: var(--wg); line-height: 1.8; max-width: 380px; }
 .pf-right {
   padding: clamp(48px,8vw,96px) clamp(32px,6vw,72px);
-  background: var(--c3);
+  background: var(--c2);
   display: flex; flex-direction: column; justify-content: center;
 }
 .pf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
@@ -662,7 +662,7 @@ section { padding-block: var(--sec); }
 
 /* === FOOTER === */
 #footer {
-  background: var(--c);
+  background: var(--c2);
   border-top: 1px solid rgba(201,173,114,.1);
   padding-block: 3rem 2rem;
 }
@@ -730,7 +730,7 @@ section { padding-block: var(--sec); }
 }
 /* === LANG SWITCHER === */
 .lang-sw { display:flex; align-items:center; gap:2px; margin-left:14px; }
-.lang-btn { background:transparent; border:none; cursor:pointer; font-family:'Archivo',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.1em; color:var(--wg); padding:4px 7px; border-radius:2px; transition:color .2s,background .2s,opacity .2s; display:flex; align-items:center; gap:4px; opacity:.55; white-space:nowrap; }
+.lang-btn { background:transparent; border:none; cursor:pointer; font-family:'Archivo',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.1em; color:rgba(243,241,236,.6); padding:4px 7px; border-radius:2px; transition:color .2s,background .2s,opacity .2s; display:flex; align-items:center; gap:4px; opacity:1; white-space:nowrap; }
 .lang-btn:hover { color:var(--ow); opacity:1; }
 .lang-btn.active { color:var(--g); opacity:1; background:rgba(201,173,114,.12); }
 .lang-sw-mob { margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,.07); justify-content:center; }
@@ -1074,7 +1074,7 @@ section { padding-block: var(--sec); }
         </div>
       </div>
       <div class="rv d2">
-        <div class="acad-tags-label">Disciplinas e temas</div>
+        <div class="acad-tags-label" id="acad-tags-lbl">Disciplinas e temas</div>
         <div class="acad-tags">
           <span class="atag">Inteligência Artificial</span>
           <span class="atag">Gestão de Projetos</span>
@@ -1170,7 +1170,7 @@ section { padding-block: var(--sec); }
     <div class="form-head rv">
       <span class="eyebrow" style="color:var(--g)">Formação &amp; Conhecimento</span>
       <h2 style="color:var(--c)">Formação acadêmica</h2>
-      <p>Trajetória acadêmica consolidada em tecnologia, educação e gestão, da graduação ao pós-doutorado.</p>
+      <p id="formacao-intro">Trajetória acadêmica consolidada em tecnologia, educação e gestão, da graduação ao pós-doutorado.</p>
     </div>
     <div class="form-grid rv d1">
       <div class="form-col">
@@ -1218,7 +1218,7 @@ section { padding-block: var(--sec); }
     <div class="rv" style="margin-bottom:clamp(32px,4vw,56px)">
       <span class="eyebrow">Projetos Aprovados em Editais</span>
       <h2 style="margin-top:16px">Inovação com Fomento / Captação</h2>
-      <p style="max-width:600px;color:var(--gr);margin-top:16px;line-height:1.65">Projetos aprovados em editais de pesquisa e inovação, traduzindo expertise técnica e visão estratégica em iniciativas com impacto real e financiamento público.</p>
+      <p id="pe-intro" style="max-width:600px;color:var(--gr);margin-top:16px;line-height:1.65">Projetos aprovados em editais de pesquisa e inovação, traduzindo expertise técnica e visão estratégica em iniciativas com impacto real e financiamento público.</p>
     </div>
 
     <div style="display:flex;flex-direction:column;gap:20px">
@@ -1230,7 +1230,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.3);color:#4ade80;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#4ade80"><circle cx="4" cy="4" r="4"/></svg>
-              Aprovado · Em Contratação
+              <span class="badge-txt badge-aprovado-contratacao">Aprovado · Em Contratação</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">FAPERGS · Centelha/RS 3ª Ed.</span>
           </div>
@@ -1246,35 +1246,35 @@ section { padding-block: var(--sec); }
         <!-- Meta grid -->
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px">
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Edital</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-edital">Edital</div>
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Edital nº 07/2025 – Programa Centelha/RS – 3ª Edição</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Fomento</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-fomento">Fomento</div>
             <div style="font-size:0.78rem;color:var(--ow)">FAPERGS</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Valor Aprovado</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-valor">Valor Aprovado</div>
             <div style="font-size:0.78rem;color:var(--ow);font-variant-numeric:tabular-nums">R$ 91.200,00</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Duração</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-duracao">Duração</div>
             <div style="font-size:0.78rem;color:var(--ow)">48 meses</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Início Previsto</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-inicio">Início Previsto</div>
             <div style="font-size:0.78rem;color:var(--ow)">17/06/2026</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Papel no Projeto</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-papel">Papel no Projeto</div>
             <div style="font-size:0.78rem;color:var(--ow)">Pesquisador/Consultor</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Instituição</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-inst">Instituição</div>
             <div style="font-size:0.78rem;color:var(--ow)">VTec – Vertices Tecnologias · UPF</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Abrangência</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-abrang">Abrangência</div>
             <div style="font-size:0.78rem;color:var(--ow)">Passo Fundo, RS</div>
           </div>
         </div>
@@ -1298,7 +1298,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.3);color:#60a5fa;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#60a5fa"><circle cx="4" cy="4" r="4"/></svg>
-              Concluído
+              <span class="badge-txt badge-concluido">Concluído</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">FAPERGS · Startup Lab</span>
           </div>
@@ -1314,11 +1314,11 @@ section { padding-block: var(--sec); }
         <!-- Meta grid -->
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px">
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Edital</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-edital">Edital</div>
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Edital 04/2021 – Programa Startup Lab</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Fomento</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-fomento">Fomento</div>
             <div style="font-size:0.78rem;color:var(--ow)">FAPERGS</div>
           </div>
           <div>
@@ -1330,15 +1330,15 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow)">2021 – 2023</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Papel no Projeto</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-papel">Papel no Projeto</div>
             <div style="font-size:0.78rem;color:var(--ow)">Outorgado / Gestor de Inovação</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Instituição</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-inst">Instituição</div>
             <div style="font-size:0.78rem;color:var(--ow)">UPF Parque – Universidade de Passo Fundo</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Abrangência</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-abrang">Abrangência</div>
             <div style="font-size:0.78rem;color:var(--ow)">Região Produção e Norte, RS</div>
           </div>
           <div>
@@ -1366,7 +1366,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.3);color:#4ade80;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#4ade80"><circle cx="4" cy="4" r="4"/></svg>
-              Aprovado · Em Execução
+              <span class="badge-txt badge-em-execucao">Aprovado · Em Execução</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">FINEP Inovacred · FNDCT</span>
           </div>
@@ -1386,7 +1386,7 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">FINEP Inovacred / FNDCT</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Valor Aprovado</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-valor">Valor Aprovado</div>
             <div style="font-size:0.78rem;color:var(--ow);font-variant-numeric:tabular-nums">R$ *.***.***,**</div>
           </div>
           <div>
@@ -1394,7 +1394,7 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow)">Yourh LTDA</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Papel no Projeto</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-papel">Papel no Projeto</div>
             <div style="font-size:0.78rem;color:var(--ow)">Sócio / Executor</div>
           </div>
         </div>
@@ -1418,7 +1418,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(201,173,114,.12);border:1px solid rgba(201,173,114,.3);color:var(--g);font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="var(--g)"><circle cx="4" cy="4" r="4"/></svg>
-              Concluído
+              <span class="badge-txt badge-concluido">Concluído</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">Royal Society · Colaboração Internacional</span>
           </div>
@@ -1442,7 +1442,7 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow)">Projeto de Pesquisa</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Papel no Projeto</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-papel">Papel no Projeto</div>
             <div style="font-size:0.78rem;color:var(--ow)">Pesquisador / Integrante</div>
           </div>
           <div>
@@ -1454,7 +1454,7 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow)">Mestrado profissionalizante (1)</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Abrangência</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-abrang">Abrangência</div>
             <div style="font-size:0.78rem;color:var(--ow)">Brasil · Reino Unido</div>
           </div>
         </div>
@@ -1478,7 +1478,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.3);color:#60a5fa;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#60a5fa"><circle cx="4" cy="4" r="4"/></svg>
-              Concluído
+              <span class="badge-txt badge-concluido">Concluído</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">CNPq · Projeto de Pesquisa</span>
           </div>
@@ -1495,11 +1495,11 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Projeto de Pesquisa</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Instituição</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-inst">Instituição</div>
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">PoloSul.org</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Abrangência</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-abrang">Abrangência</div>
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Norte do RS</div>
           </div>
           <div>
@@ -1523,7 +1523,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.3);color:#60a5fa;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#60a5fa"><circle cx="4" cy="4" r="4"/></svg>
-              Concluído
+              <span class="badge-txt badge-concluido">Concluído</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">CAPES · PROESP / Educação Especial</span>
           </div>
@@ -1565,7 +1565,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.3);color:#60a5fa;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#60a5fa"><circle cx="4" cy="4" r="4"/></svg>
-              Concluído
+              <span class="badge-txt badge-concluido">Concluído</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">CNPq · Edital Universal · Faixa C</span>
           </div>
@@ -1591,7 +1591,7 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Pesquisador Responsável</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Instituição</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-inst">Instituição</div>
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">UPF / GEPID</div>
           </div>
         </div>
@@ -1612,7 +1612,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.3);color:#60a5fa;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#60a5fa"><circle cx="4" cy="4" r="4"/></svg>
-              Concluído
+              <span class="badge-txt badge-concluido">Concluído</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">IAI · Colaboração Internacional · Phase II</span>
           </div>
@@ -1633,7 +1633,7 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Integrante/Pesquisador</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Abrangência</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-abrang">Abrangência</div>
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Brasil · Paraguai</div>
           </div>
         </div>
@@ -1653,7 +1653,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.3);color:#60a5fa;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#60a5fa"><circle cx="4" cy="4" r="4"/></svg>
-              Concluído
+              <span class="badge-txt badge-concluido">Concluído</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">EMBRAPA Trigo · Projeto de Pesquisa</span>
           </div>
@@ -1674,7 +1674,7 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Integrante/Pesquisador</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Abrangência</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-abrang">Abrangência</div>
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">PR · RS · SC</div>
           </div>
         </div>
@@ -1694,7 +1694,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.3);color:#60a5fa;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#60a5fa"><circle cx="4" cy="4" r="4"/></svg>
-              Concluído
+              <span class="badge-txt badge-concluido">Concluído</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">MAPA · Projeto de Pesquisa</span>
           </div>
@@ -1715,7 +1715,7 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Integrante/Pesquisador</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Abrangência</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-abrang">Abrangência</div>
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Brasil – Regiões Produtoras</div>
           </div>
         </div>
@@ -1736,7 +1736,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.3);color:#60a5fa;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#60a5fa"><circle cx="4" cy="4" r="4"/></svg>
-              Concluído
+              <span class="badge-txt badge-concluido">Concluído</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">EMBRAPA Trigo · Projeto de Pesquisa</span>
           </div>
@@ -1757,7 +1757,7 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Pesquisador Responsável</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Abrangência</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-abrang">Abrangência</div>
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Sul do Brasil</div>
           </div>
         </div>
@@ -1777,7 +1777,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.3);color:#60a5fa;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#60a5fa"><circle cx="4" cy="4" r="4"/></svg>
-              Concluído
+              <span class="badge-txt badge-concluido">Concluído</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">EMBRAPA Trigo · Projeto de Pesquisa</span>
           </div>
@@ -1798,7 +1798,7 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Integrante/Pesquisador</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Abrangência</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-abrang">Abrangência</div>
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Sul do Brasil</div>
           </div>
         </div>
@@ -1818,7 +1818,7 @@ section { padding-block: var(--sec); }
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.3);color:#60a5fa;font-family:'Archivo',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px">
               <svg width="7" height="7" viewBox="0 0 8 8" fill="#60a5fa"><circle cx="4" cy="4" r="4"/></svg>
-              Concluído
+              <span class="badge-txt badge-concluido">Concluído</span>
             </span>
             <span style="font-family:'Archivo',sans-serif;font-size:0.68rem;color:var(--gr);letter-spacing:.06em;text-transform:uppercase">UPF · Projeto de Pesquisa</span>
           </div>
@@ -1839,7 +1839,7 @@ section { padding-block: var(--sec); }
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">Pesquisador Responsável</div>
           </div>
           <div>
-            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">Instituição</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:0.62rem;color:var(--g);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px" class="ml-inst">Instituição</div>
             <div style="font-size:0.78rem;color:var(--ow);line-height:1.4">UPF</div>
           </div>
         </div>
@@ -1863,7 +1863,7 @@ section { padding-block: var(--sec); }
     <div class="rv" style="max-width:760px;margin-bottom:48px">
       <span class="eyebrow" style="color:var(--g)">Reconhecimentos</span>
       <h2 style="color:var(--c)">Prêmios &amp; Títulos</h2>
-      <p style="color:var(--wg)">Distinções recebidas ao longo da trajetória acadêmica e de pesquisa.</p>
+      <p id="premios-intro" style="color:var(--wg)">Distinções recebidas ao longo da trajetória acadêmica e de pesquisa.</p>
     </div>
     <div class="rv d1" style="display:flex;flex-direction:column;gap:16px;max-width:760px">
 
@@ -1871,7 +1871,7 @@ section { padding-block: var(--sec); }
         <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(to bottom,var(--g),transparent)"></div>
         <div style="flex-shrink:0;font-family:'Archivo',sans-serif;font-size:0.72rem;font-weight:600;color:var(--g);letter-spacing:.08em;padding-top:3px;min-width:40px">2011</div>
         <div>
-          <div style="font-size:0.92rem;font-weight:600;color:var(--c);line-height:1.4;margin-bottom:4px">Homenagem de Reconhecimento pela Distinção do Trabalho em Busca da Excelência Acadêmica</div>
+          <div class="premio-titulo premio-titulo-1" style="font-size:0.92rem;font-weight:600;color:var(--c);line-height:1.4;margin-bottom:4px">Homenagem de Reconhecimento pela Distinção do Trabalho em Busca da Excelência Acadêmica</div>
           <div style="font-family:'Archivo',sans-serif;font-size:0.76rem;color:var(--wg)">UFRGS — Universidade Federal do Rio Grande do Sul</div>
         </div>
       </div>
@@ -1880,7 +1880,7 @@ section { padding-block: var(--sec); }
         <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(to bottom,var(--g),transparent)"></div>
         <div style="flex-shrink:0;font-family:'Archivo',sans-serif;font-size:0.72rem;font-weight:600;color:var(--g);letter-spacing:.08em;padding-top:3px;min-width:40px">2010</div>
         <div>
-          <div style="font-size:0.92rem;font-weight:600;color:var(--c);line-height:1.4;margin-bottom:4px">2º Colocado — Concurso de Teses de Doutorado</div>
+          <div class="premio-titulo premio-titulo-2" style="font-size:0.92rem;font-weight:600;color:var(--c);line-height:1.4;margin-bottom:4px">2º Colocado — Concurso de Teses de Doutorado</div>
           <div style="font-family:'Archivo',sans-serif;font-size:0.76rem;color:var(--wg)">SBIE — Simpósio Brasileiro de Informática na Educação</div>
         </div>
       </div>
@@ -1899,7 +1899,7 @@ section { padding-block: var(--sec); }
       <div class="contato-btns" style="margin-top:2rem">
         <a href="mailto:contato@robertorabello.com.br" class="c-btn primary">
           <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="3" width="13" height="9" rx="0"/><path d="M1 3l6.5 5L14 3"/></svg>
-          Enviar e-mail
+          <span id="btn-email-txt">Enviar e-mail</span>
         </a>
         <a href="https://www.linkedin.com/in/robertosrabello/" target="_blank" rel="noopener" class="c-btn">
           <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="1" width="13" height="13" rx="0"/><path d="M5 6v5M5 4v.5M7 11V8.5c0-1.4.8-2.5 2-2.5s2 1.1 2 2.5V11"/></svg>
@@ -2196,6 +2196,48 @@ section { padding-block: var(--sec); }
       '.pf-left > p':'Completa el formulario para recibir un presupuesto personalizado para tu empresa o evento.',
       '.pf-submit':'Enviar solicitud',
       '#pf-success':'<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:12px"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg><br>¡Solicitud enviada! Me pondré en contacto a la brevedad.',
+      '#projetos-editais .eyebrow':'Proyectos Aprobados en Convocatorias',
+      '#projetos-editais h2':'Innovación con Financiamiento / Captación',
+      '#pe-intro':'Proyectos aprobados en convocatorias de investigación e innovación, traduciendo expertise técnica y visión estratégica en iniciativas con impacto real y financiamiento público.',
+      '.badge-concluido':'Completado',
+      '.badge-aprovado-contratacao':'Aprobado · En Contratación',
+      '.badge-em-execucao':'Aprobado · En Ejecución',
+      '#formacao .eyebrow':'Formación &amp; Conocimiento',
+      '#formacao h2':'Formación académica',
+      '#formacao-intro':'Trayectoria académica consolidada en tecnología, educación y gestión, desde la graduación hasta el posdoctorado.',
+      '#premios .eyebrow':'Reconocimientos',
+      '#premios h2':'Premios &amp; Títulos',
+      '#premios-intro':'Distinciones recibidas a lo largo de la trayectoria académica y de investigación.',
+      '.premio-titulo-1':'Homenaje de Reconocimiento por la Distinción del Trabajo en Busca de la Excelencia Académica',
+      '.premio-titulo-2':'2.º Lugar — Concurso de Tesis de Doctorado',
+      '#btn-email-txt':'Enviar correo',
+      '.traj-pillar:nth-child(1) .traj-detail li:nth-child(1)':'Arquitectura y plataformas digitales',
+      '.traj-pillar:nth-child(1) .traj-detail li:nth-child(2)':'Modernización de sistemas legados',
+      '.traj-pillar:nth-child(1) .traj-detail li:nth-child(3)':'Productos SaaS y cloud',
+      '.traj-pillar:nth-child(1) .traj-detail li:nth-child(4)':'Decisiones técnico-estratégicas',
+      '.traj-pillar:nth-child(2) .traj-detail li:nth-child(1)':'Liderazgo de equipos de tecnología',
+      '.traj-pillar:nth-child(2) .traj-detail li:nth-child(2)':'Gestión de productos y proyectos',
+      '.traj-pillar:nth-child(2) .traj-detail li:nth-child(3)':'OKRs, SLAs y métricas',
+      '.traj-pillar:nth-child(2) .traj-detail li:nth-child(4)':'Desarrollo de personas',
+      '.traj-pillar:nth-child(3) .traj-detail li:nth-child(3)':'Tecnología, IA, Proyectos, Innovación',
+      '.traj-pillar:nth-child(3) .traj-detail li:nth-child(4)':'Educación como transformación',
+      '#acad-tags-lbl':'Disciplinas y temas',
+      '#academico .acad-tags .atag:nth-child(1)':'Inteligencia Artificial',
+      '#academico .acad-tags .atag:nth-child(2)':'Gestión de Proyectos',
+      '#academico .acad-tags .atag:nth-child(3)':'Innovación',
+      '#academico .acad-tags .atag:nth-child(5)':'Emprendedorismo',
+      '#academico .acad-tags .atag:nth-child(6)':'Gestión Ágil',
+      '#academico .acad-tags .atag:nth-child(7)':'Tecnología',
+      '#academico .acad-tags .atag:nth-child(8)':'Transformación Digital',
+      '#academico .acad-tags .atag:nth-child(10)':'Sistemas de Información',
+      '.ml-edital':'Convocatoria',
+      '.ml-fomento':'Financiamiento',
+      '.ml-valor':'Monto Aprobado',
+      '.ml-duracao':'Duración',
+      '.ml-inicio':'Inicio Previsto',
+      '.ml-papel':'Rol en el Proyecto',
+      '.ml-inst':'Institución',
+      '.ml-abrang':'Alcance',
     },
     en: {
       'a[href="#sobre"]':'About',
@@ -2282,6 +2324,48 @@ section { padding-block: var(--sec); }
       '.pf-left > p':'Fill out the form to receive a personalized quote for your company or event.',
       '.pf-submit':'Send request',
       '#pf-success':'<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:12px"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg><br>Request sent! I\'ll be in touch soon.',
+      '#projetos-editais .eyebrow':'Approved Grant Projects',
+      '#projetos-editais h2':'Innovation with Public Funding / Grants',
+      '#pe-intro':'Projects approved through research and innovation grant calls, translating technical expertise and strategic vision into initiatives with real impact and public funding.',
+      '.badge-concluido':'Completed',
+      '.badge-aprovado-contratacao':'Approved · Contracting Phase',
+      '.badge-em-execucao':'Approved · In Progress',
+      '#formacao .eyebrow':'Education &amp; Background',
+      '#formacao h2':'Academic background',
+      '#formacao-intro':'A consolidated academic background in technology, education, and management, from undergraduate studies through post-doctoral research.',
+      '#premios .eyebrow':'Recognition',
+      '#premios h2':'Awards &amp; Titles',
+      '#premios-intro':'Distinctions received throughout an academic and research career.',
+      '.premio-titulo-1':'Recognition Award for Distinguished Work in Pursuit of Academic Excellence',
+      '.premio-titulo-2':'2nd Place — Doctoral Thesis Competition',
+      '#btn-email-txt':'Send email',
+      '.traj-pillar:nth-child(1) .traj-detail li:nth-child(1)':'Digital architecture and platforms',
+      '.traj-pillar:nth-child(1) .traj-detail li:nth-child(2)':'Legacy system modernization',
+      '.traj-pillar:nth-child(1) .traj-detail li:nth-child(3)':'SaaS products and cloud',
+      '.traj-pillar:nth-child(1) .traj-detail li:nth-child(4)':'Technical-strategic decisions',
+      '.traj-pillar:nth-child(2) .traj-detail li:nth-child(1)':'Technology team leadership',
+      '.traj-pillar:nth-child(2) .traj-detail li:nth-child(2)':'Product and project management',
+      '.traj-pillar:nth-child(2) .traj-detail li:nth-child(3)':'OKRs, SLAs and metrics',
+      '.traj-pillar:nth-child(2) .traj-detail li:nth-child(4)':'People development',
+      '.traj-pillar:nth-child(3) .traj-detail li:nth-child(3)':'Technology, AI, Projects, Innovation',
+      '.traj-pillar:nth-child(3) .traj-detail li:nth-child(4)':'Education as transformation',
+      '#acad-tags-lbl':'Disciplines and topics',
+      '#academico .acad-tags .atag:nth-child(1)':'Artificial Intelligence',
+      '#academico .acad-tags .atag:nth-child(2)':'Project Management',
+      '#academico .acad-tags .atag:nth-child(3)':'Innovation',
+      '#academico .acad-tags .atag:nth-child(5)':'Entrepreneurship',
+      '#academico .acad-tags .atag:nth-child(6)':'Agile Management',
+      '#academico .acad-tags .atag:nth-child(7)':'Technology',
+      '#academico .acad-tags .atag:nth-child(8)':'Digital Transformation',
+      '#academico .acad-tags .atag:nth-child(10)':'Information Systems',
+      '.ml-edital':'Grant Call',
+      '.ml-fomento':'Funding Agency',
+      '.ml-valor':'Approved Amount',
+      '.ml-duracao':'Duration',
+      '.ml-inicio':'Expected Start',
+      '.ml-papel':'Role in Project',
+      '.ml-inst':'Institution',
+      '.ml-abrang':'Scope',
     }
   };
 
